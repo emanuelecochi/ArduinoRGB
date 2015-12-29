@@ -2,7 +2,7 @@
 #include <MoodLight.h>
 
 #define PIXEL_PIN 10 // pin IO used for pilot the Neopixel led
-#define PIXEL_COUNT 20 // number Neopixel led present on strip
+#define PIXEL_COUNT 20 // number Neopixel led present in strip
 int valueRead = 0; // variable used for read the serial data
 byte data_in[4] {0,0,0,0}; // variable used for write data read of the serial 
 int saturation = 255;  // use value between 0 - 255
@@ -24,7 +24,7 @@ MoodLight ml = MoodLight();
 
 void setup() {
   Serial.begin(9600);
-  // inizialize the strip LED
+  // Initialize all pixels to 'off
   strip.begin();
   strip.show();
 }
@@ -49,7 +49,12 @@ void loop() {
 
 // animation signle color
 void single_color(){
-  for (int i = 0; i < 20; i++) 
+  for (int i = 0; i < 20; i++)
+    // strip.setPixelColor(n, red, green, blue);
+    // The first argument — n in this example — is the pixel number along the strip, starting from 0 closest to the Arduino. 
+    // If you have a strip of 30 pixels, they’re numbered 0 through 29.
+    // The next three arguments are the pixel color, expressed as red, green and blue brightness levels, 
+    // where 0 is dimmest (off) and 255 is maximum brightness.
     strip.setPixelColor(i,(int)data_in[1],(int)data_in[2],(int)data_in[3]);
   strip.show();
 }
