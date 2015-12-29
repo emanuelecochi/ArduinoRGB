@@ -130,7 +130,7 @@ public class ArduinoRGB {
 		int[] rgb = new int[3];
 		
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(ArduinoRGB.class.getResource("/image/rgb.png")));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("I:\\Documenti\\Eclipse\\workspace\\ArduinoRGB\\image\\rgb.png"));
 		frame.setBounds(100, 100, 499, 360);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -352,6 +352,11 @@ public class ArduinoRGB {
 		});
 		btnUpdate.setBounds(246, 54, 77, 23);
 		frame.getContentPane().add(btnUpdate);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("I:\\Documenti\\Eclipse\\workspace\\ArduinoRGB\\image\\sfumatureRGB.jpg"));
+		lblNewLabel_1.setBounds(96, 270, 342, 23);
+		frame.getContentPane().add(lblNewLabel_1);
 		
 	}
 }
