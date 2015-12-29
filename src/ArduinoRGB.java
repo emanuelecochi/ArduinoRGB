@@ -245,6 +245,11 @@ public class ArduinoRGB {
 				// and send serialWrite(sliderRainbow.getValue())
 				if (checkboxRainbow.getState()) {
 					sliderRainbow.setEnabled(true);
+					// sending four times to be sure that Arduino read it, 
+					// because the buffer Arduino might still be full
+					serialWrite(sliderRainbow.getValue());
+					serialWrite(sliderRainbow.getValue());
+					serialWrite(sliderRainbow.getValue());
 					serialWrite(sliderRainbow.getValue());
 					sliderRed.setEnabled(false);
 					sliderGreen.setEnabled(false);
@@ -260,6 +265,11 @@ public class ArduinoRGB {
 					rgb[0] = 0;
 					rgb[1] = 0;
 					rgb[2] = 0;
+					// sending four times to be sure that Arduino read it, 
+					// because the buffer Arduino might still be full
+					serialWrite(rgb);
+					serialWrite(rgb);
+					serialWrite(rgb);
 					serialWrite(rgb);
 					sliderRed.setEnabled(true);
 					sliderGreen.setEnabled(true);
