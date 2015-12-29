@@ -8,7 +8,7 @@ byte data_in[4] {0,0,0,0}; // variable used for write data read of the serial
 int saturation = 255;  // use value between 0 - 255
 int brightness = 255;  // use value between 0 - 255
 int hue = 0; // use value between 0 - 359
-
+ 
 // create the object strip of type Adafruit_NeoPixel
 // Parameter 1 = number of pixels in strip
 // Parameter 2 = Arduino pin number (most are valid)
