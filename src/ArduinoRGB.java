@@ -208,8 +208,8 @@ public class ArduinoRGB {
 		// definite and managed the title app
 		JLabel lblNewLabel = new JLabel("Arduino RGB");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel.setBounds(203, 11, 99, 23);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNewLabel.setBounds(183, 11, 131, 23);
 		frame.getContentPane().add(lblNewLabel);
 		
 		// definite and managed the label red slider

@@ -38,7 +38,7 @@ void loop() {
       }
     }
   // choose the animation
-  if (data_in[0] == 'A') 
+  if (data_in[0] == 'A')  
       single_color();
   else if (data_in[0] == 'B') {
       hue = (data_in[2]*256+data_in[1]);
@@ -49,7 +49,8 @@ void loop() {
 
 // animation signle color
 void single_color(){
-  strip.setPixelColor(0,(int)data_in[1],(int)data_in[2],(int)data_in[3]);
+  for (int i = 0; i < 20; i++) 
+    strip.setPixelColor(i,(int)data_in[1],(int)data_in[2],(int)data_in[3]);
   strip.show();
 }
 
@@ -57,7 +58,8 @@ void single_color(){
 void rainbow_light(int hue){
   // set the Moodlight values 
   ml.setHSB(hue, saturation , brightness);
-  strip.setPixelColor(0,ml.getRed(),ml.getGreen(),ml.getBlue());
+  for (int i = 0; i < 20; i++) 
+    strip.setPixelColor(i,ml.getRed(),ml.getGreen(),ml.getBlue());
   strip.show();
 }
 
