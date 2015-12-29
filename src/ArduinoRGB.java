@@ -19,6 +19,12 @@ import java.awt.Checkbox;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Toolkit;
+import java.awt.Panel;
+import javax.imageio.ImageIO;
+import java.awt.Canvas;
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
 
 
 public class ArduinoRGB {
@@ -124,6 +130,7 @@ public class ArduinoRGB {
 		int[] rgb = new int[3];
 		
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("I:\\Documenti\\Eclipse\\workspace\\ArduinoRGB\\image\\rgb2.png"));
 		frame.setBounds(100, 100, 499, 360);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -345,6 +352,11 @@ public class ArduinoRGB {
 		});
 		btnUpdate.setBounds(246, 54, 77, 23);
 		frame.getContentPane().add(btnUpdate);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("I:\\Documenti\\Eclipse\\workspace\\ArduinoRGB\\image\\sfumature_crossbrowser_css.jpg"));
+		lblNewLabel_1.setBounds(96, 270, 345, 23);
+		frame.getContentPane().add(lblNewLabel_1);
 		
 	}
 }
