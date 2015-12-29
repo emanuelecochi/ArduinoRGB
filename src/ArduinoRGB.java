@@ -2,8 +2,6 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.plaf.SliderUI;
 
 import javax.swing.JSlider;
 import javax.swing.event.ChangeListener;
@@ -11,20 +9,16 @@ import javax.swing.event.ChangeEvent;
 import jssc.SerialPort;
 import jssc.SerialPortException;
 import jssc.SerialPortList;
-import java.io.IOException;
-import java.util.Scanner;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.Color;
-import javax.swing.JComboBox;
 import java.awt.Choice;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import java.awt.Checkbox;
+import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
 
 
 public class ArduinoRGB {
@@ -69,7 +63,7 @@ public class ArduinoRGB {
 		try {
 				byte[] data = new byte[4];
 				// data[0] = 1 definisce l'animazione singleLed 
-				data[0] = (byte)1;
+				data[0] = (byte)'A';
 				// inserisco il valore dello slider rosso in data[0]
 				data[1] = (byte)rgbValue[0];
 				// inserisco il valore dello slider verde in data[1]
@@ -88,7 +82,7 @@ public class ArduinoRGB {
 		try {
 			byte[] data = new byte[4];
 			// data[0] = 2 definisce l'animazione singleLed 
-			data[0] = (byte)2;
+			data[0] = (byte)'B';
 			// inserisco il valore dello slider rosso in data[0]
 			data[1] = (byte)rainbowValue;
 			// inserisco il valore dello slider verde in data[1]
@@ -108,7 +102,6 @@ public class ArduinoRGB {
 	 */
 	public ArduinoRGB() {
 		initialize();
-		//serialInitialize();
 	}
 	
 	/**
@@ -199,7 +192,7 @@ public class ArduinoRGB {
 		JLabel lblPortCom = new JLabel("Select Port");
 		lblPortCom.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPortCom.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblPortCom.setBounds(166, 71, 77, 14);
+		lblPortCom.setBounds(113, 70, 77, 14);
 		frame.getContentPane().add(lblPortCom);
 		
 		JSlider sliderRainbow = new JSlider();
@@ -223,7 +216,7 @@ public class ArduinoRGB {
 			public void itemStateChanged(ItemEvent e) {
 				if (checkbox.getState()) {
 					sliderRainbow.setEnabled(true);
-					serialWrite(sliderRainbow.getValue());
+					serialWrite(0);
 					sliderRed.setEnabled(false);
 					sliderGreen.setEnabled(false);
 					sliderBlue.setEnabled(false);
@@ -268,10 +261,23 @@ public class ArduinoRGB {
 				}
 			}
 		});
-		choice.setBounds(249, 68, 107, 20);
+		choice.setBounds(196, 67, 107, 20);
+		frame.getContentPane().add(choice);
 		for (String list: listPort)
 			choice.add(list);
-		frame.getContentPane().add(choice);
 		
+		JButton btnNewButton = new JButton("Updates");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				listPort = SerialPortList.getPortNames();
+				choice.removeAll();
+				for (String list: listPort)
+					choice.add(list);
+			}
+		});
+		btnNewButton.setBounds(329, 66, 82, 23);
+		frame.getContentPane().add(btnNewButton);
+
 	}
 }
