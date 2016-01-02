@@ -200,7 +200,7 @@ public class ArduinoRGB {
 			}
 		});
 		sliderRainbow.setValue(0);
-		sliderRainbow.setMaximum(1024);
+		sliderRainbow.setMaximum(359);
 		sliderRainbow.setEnabled(false);
 		sliderRainbow.setBounds(93, 246, 353, 23);
 		frame.getContentPane().add(sliderRainbow);

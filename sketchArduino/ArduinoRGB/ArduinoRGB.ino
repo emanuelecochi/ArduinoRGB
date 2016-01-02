@@ -42,7 +42,6 @@ void loop() {
       single_color();
   else if (data_in[0] == 'B') {
       hue = (data_in[2]*256+data_in[1]);
-      hue = map(hue,0,1024,0,359);
       rainbow_light(hue);
   }
 }
