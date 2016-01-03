@@ -20,11 +20,6 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Toolkit;
-import java.awt.Panel;
-import javax.imageio.ImageIO;
-import java.awt.Canvas;
-import javax.swing.JPanel;
-import javax.swing.ImageIcon;
 
 
 public class ArduinoRGB {
@@ -206,11 +201,11 @@ public class ArduinoRGB {
 		frame.getContentPane().add(sliderRainbow);
 		
 		// definite and managed the title app
-		JLabel lblNewLabel = new JLabel("Arduino RGB");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel.setBounds(183, 11, 131, 23);
-		frame.getContentPane().add(lblNewLabel);
+		JLabel lblTitle = new JLabel("Arduino RGB");
+		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitle.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblTitle.setBounds(183, 11, 131, 23);
+		frame.getContentPane().add(lblTitle);
 		
 		// definite and managed the label red slider
 		JLabel lblRed = new JLabel("RED");
