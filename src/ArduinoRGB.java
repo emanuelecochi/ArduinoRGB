@@ -28,7 +28,7 @@ public class ArduinoRGB {
 	SerialPort serialPort;
 	String[] listPort;
 	boolean init = false;
-	boolean rainbow = false;
+
 
 	/**
 	 * Launch the application.
