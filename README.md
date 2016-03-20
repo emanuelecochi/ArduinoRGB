@@ -12,4 +12,4 @@ The libraries necessary for sketch Arduino are:
 The libraries necessary for code Java are:
 - jSSC (https://github.com/scream3r/java-simple-serial-connector/releases) License: GNU Lesser General Public License
 
-The project is described in this article http://www.esperienzahitech.it/arduino/arduino-led-rgb-java-gui/
+The project is described in this article http://www.esperienzahitech.it/arduino/gui-java-gestione-led-rgb-con-arduino/
