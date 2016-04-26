@@ -31,7 +31,7 @@ void setup() {
 
 void loop() { 
   // save data in data_in
-  if (Serial.available() > 4){
+  if (Serial.available() > 3){
       for (int i = 0; i<4; i++) {
       valueRead = Serial.read();
       data_in[i] = valueRead;
